@@ -5,6 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIXELBILLAH</title>
   <link rel="icon" type="image/x-icon" href="Pixelbillah white icon.png">
+
+   <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+  
   <style>
     /* Reset */
     * {
@@ -622,15 +661,95 @@ section p {
     <textarea rows="5" placeholder="Your Message" required></textarea>
     <input type="submit" value="Send Message">
   </form>
-
-
-  <div class="social-links">
-    <a href="https://www.youtube.com/@PixelBillah" target="_blank">📺 Youtube</a>
-    <a href="https://www.linkedin.com/in/md-masum-billah411/" target="_blank">💼 LinkedIn</a>
-    <a href="https://www.instagram.com/pixelbillah/" target="_blank">📷 Instagram</a>
-    <a href="https://x.com/MDMasumProdhan5" target="_blank">🐦 Twitter</a>
-  </div>
 </section>
+
+  <!-- Footer Section -->
+    <footer class="bg-gradient-to-r from-primary-900 to-primary-700 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <i data-feather="briefcase" class="mr-2"></i> PixelBillah
+                    </h3>
+                    <p class="text-gray-300 mb-4">Connecting talent with opportunity worldwide since 2025.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/PixelBillah" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-masum-billah411/" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pixelbillah/" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-masum-billah411/" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Browse Jobs</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Find Freelancers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Community</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Webinars</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Freelance Toolkit</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-semibold mb-4">Stay Updated</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for the latest opportunities and tips.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary-500 w-full">
+                        <button type="submit" class="bg-secondary-500 hover:bg-secondary-600 px-4 py-2 rounded-r-lg transition-colors">
+                            <i data-feather="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 PixelBillah. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 <!-- Live Chat Widget -->
 <div id="chat-container">
@@ -729,5 +848,6 @@ function handleKeyPress(event) {
 
 </body>
 </html>
+
 
 
