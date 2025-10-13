@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T-Shirts & Merchandise</title>
 
+
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3b82f6', // blue-500 as default primary
+                        },
+                        secondary: {
+                            500: '#10b981', // emerald-500 as default secondary
+                        }
+                    }
+                }
+            }
+        }
+    </script>
   
   <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -233,7 +254,7 @@
     z-index: 10000;
   }
 
-  #chat-button: hover {
+  #chat-button:hover {
     transform: scale(1.1);
   }
 
@@ -318,7 +339,7 @@
     cursor: pointer;
   }
 
-  #chat-send: hover {
+  #chat-send:hover {
     background: #00919a;
   }
     /* Contact Section */
@@ -386,19 +407,77 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <h1>PIXELBILLAH</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href=" index.html #graphic-design">Graphic Design</a></li>
-        <li><a href="index.html #video-editing">Video Editing</a></li>
-        <li><a href="index.html #motion-graphics">Motion Graphics</a></li>
-        <li><a href="index.html #Blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="sticky top-0 z-50 shadow-sm bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center space-x-2">
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">PixelBillah</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#Home"  class="text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="#graphic-design" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Graphics Design</a>
+                    <a href="#video-editing" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Video Editing</a>
+                    <a href="#motion-graphics" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Motion Graphics</a>
+                    <a href="#Blog" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Blog</a>
+                    <a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                    <a href="#contact" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                        <i data-feather="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors" id="theme-toggle">
+                        <i data-feather="sun" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-feather="moon" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
+                    <a href="#" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-md transition-colors">
+                        Sign In
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                <a href="index.html #graphic-design" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Graphics Design</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Motion Graphics</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Blog</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+                <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center px-5 space-x-4">
+                        <button class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                            <i data-feather="search" class="w-5 h-5"></i>
+                        </button>
+                        <button class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors" id="mobile-theme-toggle">
+                            <i data-feather="sun" class="w-5 h-5 hidden dark:block"></i>
+                            <i data-feather="moon" class="w-5 h-5 block dark:hidden"></i>
+                        </button>
+                        <a href="#" class="w-full px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-md transition-colors text-center">
+                            Sign In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
   <!-- Page Title -->
   <h1 class="page-title">T-Shirt & Merchandise</h1>
@@ -671,7 +750,7 @@
       });
     });
 
-<script>
+
 function toggleChat() {
   const chat = document.getElementById('chat-container');
   const button = document.getElementById('chat-button');
@@ -726,11 +805,52 @@ document.querySelectorAll('.lightbox').forEach(lb => {
     if(e.target === lb) closeLightbox(lb.id);
   });
 });
-
-
   </script>
+
+  <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+
+  
 </body>
 </html>
+
 
 
 
