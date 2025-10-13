@@ -801,13 +801,19 @@ section p {
         });
     </script>
 
-<!-- Live Chat Widget -->
+<!-- Floating Chat Icon -->
+<div id="chat-button" onclick="toggleChat()"> :Chat: </div>
+
+<!-- Chat Window -->
 <div id="chat-container">
-  <div id="chat-header" onclick="toggleChat()">💬 Chat with me</div>
-  <div id="chat-box">
-    <div id="chat-messages"></div>
+  <div id="chat-header">
+    Chat with me
+    <span onclick="toggleChat()">✖</span>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
     <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
-    <button onclick="sendMessage()">Send</button>
+    <button id="chat-send" onclick="sendMessage()">Send</button>
   </div>
 </div>
 
@@ -860,22 +866,6 @@ section p {
       });
     });
 
-<!-- Floating Chat Icon -->
-<div id="chat-button" onclick="toggleChat()"> :Chat: </div>
-
-<!-- Chat Window -->
-<div id="chat-container">
-  <div id="chat-header">
-    Chat with me
-    <span onclick="toggleChat()">✖</span>
-  </div>
-  <div id="chat-messages"></div>
-  <div id="chat-input-area">
-    <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
-    <button id="chat-send" onclick="sendMessage()">Send</button>
-  </div>
-</div>
-
 <script>
 function toggleChat() {
   const chat = document.getElementById('chat-container');
@@ -920,6 +910,7 @@ function handleKeyPress(event) {
 
 </body>
 </html>
+
 
 
 
