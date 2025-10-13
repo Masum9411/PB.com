@@ -218,6 +218,30 @@ section p {
   transform: scale(1.1);
 }
 
+    @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* one item per row on small screens */
+  }
+
+  #about img {
+    width: 120px;
+    height: 120px;
+  }
+
+  section {
+    padding: 60px 10px;
+  }
+}
+
+
 /* Overlay Text */
 .overlay {
   position: absolute;
@@ -306,25 +330,44 @@ section p {
       scroll-behavior: smooth;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: -200px;
-        background: #111;
-        width: 200px;
-        transition: right 0.3s ease;
-      }
+   /* === Responsive Navigation === */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
 
-      nav ul.show {
-        right: 0;
-      }
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
 
-      nav ul li {
-        margin: 15px 0;
-      }
+  nav ul {
+    position: absolute;
+    top: 60px;
+    right: -250px;
+    background: #111;
+    width: 200px;
+    flex-direction: column;
+    align-items: start;
+    padding: 15px;
+    transition: right 0.3s ease;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
 
       .menu-toggle {
         display: block;
@@ -500,6 +543,22 @@ section p {
     text-align: left;
     color: #333;
   }
+    @media (max-width: 500px) {
+  #chat-container {
+    width: 90%;
+    right: 5%;
+    bottom: 80px;
+  }
+
+  #chat-button {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
 
   /* Input Area */
   #chat-input-area {
@@ -910,6 +969,7 @@ function handleKeyPress(event) {
 
 </body>
 </html>
+
 
 
 
