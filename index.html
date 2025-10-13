@@ -331,6 +331,7 @@ section p {
     }
 
    /* === Responsive Navigation === */
+    
 @media (max-width: 768px) {
   header {
     flex-wrap: wrap;
@@ -376,13 +377,13 @@ section p {
       }
 
       .search-box input {
-        width: 90%;
+        width: 15%;
       }
 
       #about {
         padding: 100px 20px;
       }
-    }
+    
 
     .menu-toggle {
       display: none;
@@ -433,7 +434,7 @@ section p {
   transition: background 0.3s;
 }
 
-.btn: hover {
+.btn:hover {
   background: #e65c00;
 }
 
@@ -480,7 +481,7 @@ section p {
     z-index: 10000;
   }
 
-  #chat-button: hover {
+  #chat-button:hover {
     transform: scale(1.1);
   }
 
@@ -581,7 +582,7 @@ section p {
     cursor: pointer;
   }
 
-  #chat-send: hover {
+  #chat-send:hover {
     background: #00919a;
   }
     
@@ -925,7 +926,6 @@ section p {
       });
     });
 
-<script>
 function toggleChat() {
   const chat = document.getElementById('chat-container');
   const button = document.getElementById('chat-button');
@@ -969,6 +969,7 @@ function handleKeyPress(event) {
 
 </body>
 </html>
+
 
 
 
