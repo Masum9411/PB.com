@@ -390,7 +390,7 @@ section p {
   transition: background 0.3s;
 }
 
-.btn:hover {
+.btn: hover {
   background: #e65c00;
 }
 
@@ -412,70 +412,120 @@ section p {
   background: #e65c00;
 }
 
-/* Live Chat Styles */
-#chat-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  font-family: 'Poppins', sans-serif;
-  z-index: 10000;
-}
+/* General Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
 
-#chat-header {
-  background: #00adb5;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-  font-weight: bold;
-}
+  /* Floating Chat Button */
+  #chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #00adb5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
 
-#chat-box {
-  display: none; /* hidden by default */
-  background: #fff;
-  border: 2px solid #00adb5;
-  border-radius: 0 0 10px 10px;
-  max-height: 400px;
-  display: flex;
-  flex-direction: column;
-}
+  #chat-button: hover {
+    transform: scale(1.1);
+  }
 
-#chat-messages {
-  padding: 10px;
-  height: 200px;
-  overflow-y: auto;
-  border-bottom: 1px solid #00adb5;
-}
+  /* Chat Container */
+  #chat-container {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 320px;
+    background: #fff;
+    border: 2px solid #00adb5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+    z-index: 9999;
+  }
 
-#chat-messages .message {
-  margin-bottom: 10px;
-}
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 
-#chat-messages .message.user {
-  text-align: right;
-  color: #00adb5;
-}
+  /* Chat Header */
+  #chat-header {
+    background: #00adb5;
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
 
-#chat-messages .message.bot {
-  text-align: left;
-  color: #333;
-}
+  #chat-header span {
+    cursor: pointer;
+    font-size: 18px;
+  }
 
-#chat-input {
-  border: none;
-  padding: 10px;
-  flex: 1;
-  outline: none;
-}
+  /* Chat Box */
+  #chat-messages {
+    padding: 10px;
+    height: 220px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+  }
 
-#chat-box button {
-  background: #00adb5;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+  #chat-messages .message {
+    margin-bottom: 10px;
+  }
+
+  #chat-messages .message.user {
+    text-align: right;
+    color: #00adb5;
+  }
+
+  #chat-messages .message.bot {
+    text-align: left;
+    color: #333;
+  }
+
+  /* Input Area */
+  #chat-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+
+  #chat-input {
+    border: none;
+    padding: 10px;
+    flex: 1;
+    outline: none;
+  }
+
+  #chat-send {
+    background: #00adb5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  #chat-send: hover {
+    background: #00919a;
+  }
+    
 .gallery-item-link {
   display: block;           /* makes the link a block */
   text-decoration: none;    /* removes underline */
@@ -810,9 +860,34 @@ section p {
       });
     });
 
+<!-- Floating Chat Icon -->
+<div id="chat-button" onclick="toggleChat()"> :Chat: </div>
+
+<!-- Chat Window -->
+<div id="chat-container">
+  <div id="chat-header">
+    Chat with me
+    <span onclick="toggleChat()">✖</span>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+    <button id="chat-send" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
 function toggleChat() {
-  const chatBox = document.getElementById('chat-box');
-  chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+  const chat = document.getElementById('chat-container');
+  const button = document.getElementById('chat-button');
+
+  if (chat.style.display === 'flex') {
+    chat.style.display = 'none';
+    button.style.display = 'flex';
+  } else {
+    chat.style.display = 'flex';
+    button.style.display = 'none';
+  }
 }
 
 function sendMessage() {
@@ -822,19 +897,17 @@ function sendMessage() {
 
   const messages = document.getElementById('chat-messages');
 
-  // Add user message
   const userMsg = document.createElement('div');
   userMsg.classList.add('message', 'user');
   userMsg.textContent = message;
   messages.appendChild(userMsg);
 
-  // Add bot response
   const botMsg = document.createElement('div');
   botMsg.classList.add('message', 'bot');
-  botMsg.textContent = "Thank you! I will get back to you soon.";
+  botMsg.textContent = "Thanks! I'll get back to you soon 😊";
   messages.appendChild(botMsg);
 
-  messages.scrollTop = messages.scrollHeight; // scroll to bottom
+  messages.scrollTop = messages.scrollHeight;
   input.value = '';
 }
 
@@ -843,11 +916,11 @@ function handleKeyPress(event) {
     sendMessage();
   }
 }
-
   </script>
 
 </body>
 </html>
+
 
 
 
