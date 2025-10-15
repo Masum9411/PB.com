@@ -5,29 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poster Design</title>
 
-
-     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            500: '#3b82f6', // blue-500 as default primary
-                        },
-                        secondary: {
-                            500: '#10b981', // emerald-500 as default secondary
-                        }
-                    }
-                }
-            }
+    
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 500: '#0ea5e9', 600: '#0284c7' },
+            secondary: { 500: '#8b5cf6', 600: '#7c3aed' }
+          }
         }
+      }
+    }
+  </script>
 
-        
-    </script>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    /* General Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { transition: background 0.3s, color 0.3s; }
+    header { transition: background 0.3s, color 0.3s; }
+    .dark body { background-color: #111; color: #fff; }
+    .dark header { background-color: #222; color: #fff; }
+    /* Add your other styles here ... */
+  </style>
+  
   
   
 <script src="https://cdn.tailwindcss.com"></script>
@@ -416,13 +425,13 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="flex items-center space-x-2">
-                        <span class="text-xl font-bold text-gray-900 dark:text-white">PixelBillah</span>
+                        <span class="text-xl font-bold text-gray-700 dark:text-white">PixelBillah</span>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html"  class="text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="index.html"  class="text-gray-500 dark:text-white hover:text-primary-400 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
                     <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Graphics Design</a>
                     <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Video Editing</a>
                     <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors">Motion Graphics</a>
@@ -457,7 +466,7 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-white hover:text-primary-400 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Graphics Design</a>
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
                 <a href="index.htmlc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700">Motion Graphics</a>
@@ -860,6 +869,7 @@ document.querySelectorAll('.lightbox').forEach(lb => {
   
 </body>
 </html>
+
 
 
 
