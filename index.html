@@ -7,30 +7,36 @@
   <link rel="icon" type="image/x-icon" href="Pixelbillah white icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            500: '#3b82f6', // blue-500 as default primary
-                        },
-                        secondary: {
-                            500: '#10b981', // emerald-500 as default secondary
-                        }
-                    }
-                }
-            }
+    <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 500: '#0ea5e9', 600: '#0284c7' },
+            secondary: { 500: '#8b5cf6', 600: '#7c3aed' }
+          }
         }
+      }
+    }
+  </script>
 
-        
-    </script>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    /* General Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { transition: background 0.3s, color 0.3s; }
+    header { transition: background 0.3s, color 0.3s; }
+    .dark body { background-color: #111; color: #fff; }
+    .dark header { background-color: #222; color: #fff; }
+    /* Add your other styles here ... */
+  </style>
   
    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -1105,6 +1111,7 @@ function handleKeyPress(event) {
   
 </body>
 </html>
+
 
 
 
