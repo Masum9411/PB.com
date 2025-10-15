@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poster Design</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     
@@ -209,38 +210,34 @@
     }
 
     /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
+     .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  cursor: default;
+}
 
-    .lightbox:target {
-      display: flex;
-      cursor: pointer; /* clicking background closes it */
-    }
-
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: #fff;
-      font-size: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
      /* General Styles */
   body {
     font-family: 'Poppins', sans-serif;
@@ -496,104 +493,104 @@
   <h1 class="page-title">Poster Design</h1>
 
   <!-- Gallery -->
-  <div class="gallery">
-    <div class="gallery-item">
-      <a href="#img1"><img src="Post design/Math-ad-post-design.jpg" alt="Post Design"></a>
-      <a href="#img1"><h3>Post Design</h3></a>
-      <p>$35</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img2"><img src="Post design/Math-ad-post-designs.jpg" alt="Post Design"></a>
-      <a href="#img2"><h3>Post Design</h3></a>
-      <p>$35</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img3"><img src="Post design/School-post-design.jpg" alt="Post Design"></a>
-      <a href="#img3"><h3>Post Design</h3></a>
-      <p>$30</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img4"><img src="Post design/School-post-designs.jpg" alt="Post Design"></a>
-      <a href="#img4"><h3>Post Design</h3></a>
-      <p>$30</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img5"><img src="Post design/poster-desgin.png" alt="Post Design"></a>
-      <a href="#img5"><h3>Post Design</h3></a>
-      <p>$20</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img6"><img src="Post design/poster-desgin-2.jpg" alt="Post Design"></a>
-      <a href="#img6"><h3>Post Design</h3></a>
-      <p>$20</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img7"><img src="Post design/burger.jpg" alt="Post Design"></a>
-      <a href="#img7"><h3>Post Design</h3></a>
-      <p>$30</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
-
-    <div class="gallery-item">
-      <a href="#img8"><img src="Post design/Cofee.jpg" alt="Post Design"></a>
-      <a href="#img8"><h3>Post Design</h3></a>
-      <p>$30</p>
-      <a href="mailto:your@email.com" class="contact-btn">Contact</a>
-    </div>
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="Post design/Math-ad-post-design.jpg" alt="Educational post design" onclick="openLightbox('img1')">
+    <h3>Educational post design</h3>
+    <p>$30</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <!-- Lightbox images -->
-  <div id="img1" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/Math-ad-post-design.jpg" alt="Item 1">
+  <div class="gallery-item">
+    <img src="Post design/Math-ad-post-designs.jpg" alt="Educational post design" onclick="openLightbox('img2')">
+    <h3>Educational post design</h3>
+    <p>$30</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <div id="img2" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/Math-ad-post-designs.jpg" alt="Item 2">
+  <div class="gallery-item">
+    <img src="Post design/School-post-design.jpg" alt="Educational post design" onclick="openLightbox('img3')">
+    <h3>Educational post design</h3>
+    <p>$50</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <div id="img3" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/School-post-design.jpg" alt="Item 3">
+  <div class="gallery-item">
+    <img src="Post design/School-post-designs.jpg" alt="Educational post design" onclick="openLightbox('img4')">
+    <h3>Educational post design</h3>
+    <p>$50</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <div id="img4" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/School-post-designs.jpg" alt="Item 4">
+  <div class="gallery-item">
+    <img src="Post design/poster-desgin.png" alt="Poster Design" onclick="openLightbox('img5')">
+    <h3>Poster Design</h3>
+    <p>$25</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-<div id="img5" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/poster-desgin.png" alt="Item 5">
+  <div class="gallery-item">
+    <img src="Post design/poster-desgin-2.jpg" alt="Poster Design" onclick="openLightbox('img6')">
+    <h3>Poster Design</h3>
+    <p>$50</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <div id="img6" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/poster-desgin-2.jpg" alt="Item 6">
+  <div class="gallery-item">
+    <img src="Post design/burger.jpg" alt="Ad Design" onclick="openLightbox('img7')">
+    <h3>Ad Design</h3>
+    <p>$50</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
 
-  <div id="img7" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/burger.jpg" alt="Item 7">
+  <div class="gallery-item">
+    <img src="Post design/Cofee.jpg" alt="Ad Design" onclick="openLightbox('img8')">
+    <h3>Ad Design</h3>
+    <p>$50</p>
+    <a href="mailto:your@email.com" class="contact-btn">Contact</a>
   </div>
+</div>
 
-  <div id="img8" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="Post design/Cofee.jpg" alt="Item 8">
-  </div>
+<!-- Lightbox Section -->
+<div id="img1" class="lightbox" onclick="closeLightbox('img1')">
+  <span class="close" onclick="closeLightbox('img1')">&times;</span>
+  <img src="Post design/Math-ad-post-design.jpg" alt="Educational post design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img2" class="lightbox" onclick="closeLightbox('img2')">
+  <span class="close" onclick="closeLightbox('img2')">&times;</span>
+  <img src="Post design/Math-ad-post-designs.jpg" alt="Educational post design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img3" class="lightbox" onclick="closeLightbox('img3')">
+  <span class="close" onclick="closeLightbox('img3')">&times;</span>
+  <img src="Post design/School-post-design.jpg" alt="Educational post design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img4" class="lightbox" onclick="closeLightbox('img4')">
+  <span class="close" onclick="closeLightbox('img4')">&times;</span>
+  <img src="Post design/School-post-designs.jpg" alt="Educational post design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img5" class="lightbox" onclick="closeLightbox('img5')">
+  <span class="close" onclick="closeLightbox('img5')">&times;</span>
+  <img src="Post design/poster-desgin.png" alt="Poster Design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img6" class="lightbox" onclick="closeLightbox('img6')">
+  <span class="close" onclick="closeLightbox('img6')">&times;</span>
+  <img src="Post design/poster-desgin-2.jpg" alt="Poster Design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img7" class="lightbox" onclick="closeLightbox('img7')">
+  <span class="close" onclick="closeLightbox('img7')">&times;</span>
+  <img src="Post design/burger.jpg" alt="Ad Design" onclick="event.stopPropagation()">
+</div>
+
+<div id="img8" class="lightbox" onclick="closeLightbox('img8')">
+  <span class="close" onclick="closeLightbox('img8')">&times;</span>
+  <img src="Post design/Cofee.jpg" alt="Ad Design" onclick="event.stopPropagation()">
+</div>
 
 
   <!-- Continue lightbox for all 20 images -->
@@ -611,7 +608,7 @@
   </form>
 </section>
 
-  <!-- Footer Section -->
+ <!-- Footer Section -->
     <footer class="bg-gradient-to-r from-primary-900 to-primary-700 text-white">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -622,20 +619,33 @@
                     </h3>
                     <p class="text-gray-300 mb-4">Connecting talent with opportunity worldwide since 2025.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/PixelBillah" class="text-gray-300 hover:text-white transition-colors">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/md-masum-billah411/" class="text-gray-300 hover:text-white transition-colors">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/pixelbillah/" class="text-gray-300 hover:text-white transition-colors">
-                            <i data-feather="instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/md-masum-billah411/" class="text-gray-300 hover:text-white transition-colors">
-                            <i data-feather="linkedin"></i>
-                        </a>
+                         <a href="https://www.facebook.com/PixelBillah" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-facebook-f"></i>
+                         </a>
+                         <a href="https://x.com/MDMasumProdhan5" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-x-twitter"></i>
+                         </a>
+                         <a href="https://www.instagram.com/pixelbillah/" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-instagram"></i>
+                         </a>
+                         <a href="https://www.linkedin.com/in/md-masum-billah411/" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-linkedin-in"></i>
+                         </a>
+                         <a href="https://www.youtube.com/@PixelBillah" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-youtube"></i>
+                         </a>
+                         <a href="https://www.behance.net/designermasum41" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-behance"></i>
+                         </a>
+                         <a href="https://www.behance.net/masum411" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-behance"></i>
+                         </a>
+                         <a href="https://dribbble.com/Masum411" class="text-gray-300 hover:text-white transition-colors">
+                         <i class="fab fa-dribbble"></i>
+                         </a>
                     </div>
                 </div>
+
 
                 <!-- Quick Links -->
                 <div class="col-span-1">
@@ -869,6 +879,7 @@ document.querySelectorAll('.lightbox').forEach(lb => {
   
 </body>
 </html>
+
 
 
 
